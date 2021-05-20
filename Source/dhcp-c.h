@@ -3,7 +3,7 @@
 *                                              uC/DHCPc
 *                             Dynamic Host Configuration Protocol Client
 *
-*                    Copyright 2004-2020 Silicon Laboratories Inc. www.silabs.com
+*                    Copyright 2004-2021 Silicon Laboratories Inc. www.silabs.com
 *
 *                                 SPDX-License-Identifier: APACHE-2.0
 *
@@ -20,7 +20,7 @@
 *                                             DHCP CLIENT
 *
 * Filename : dhcp-c.h
-* Version  : V2.11.00
+* Version  : V2.11.01
 *********************************************************************************************************
 * Note(s)  : (1) Supports Dynamic Host Configuration Protocol as described in RFC #2131 with the
 *                     following features/restrictions/constraints :
@@ -101,7 +101,7 @@
 *********************************************************************************************************
 */
 
-#define  DHCPc_VERSION                                 21100u   /* See Note #1.                                         */
+#define  DHCPc_VERSION                                 21101u   /* See Note #1.                                         */
 
 
 /*

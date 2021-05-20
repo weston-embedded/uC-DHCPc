@@ -3,7 +3,7 @@
 *                                              uC/DHCPc
 *                             Dynamic Host Configuration Protocol Client
 *
-*                    Copyright 2004-2020 Silicon Laboratories Inc. www.silabs.com
+*                    Copyright 2004-2021 Silicon Laboratories Inc. www.silabs.com
 *
 *                                 SPDX-License-Identifier: APACHE-2.0
 *
@@ -21,7 +21,7 @@
 *                                          Micrium uC/OS-III
 *
 * Filename : dhcp-c_os.c
-* Version  : V2.11.00
+* Version  : V2.11.01
 *********************************************************************************************************
 * Note(s)  : (1) Assumes uC/OS-III V3.01.0 (or more recent version) is included in the project build.
 *

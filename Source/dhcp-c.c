@@ -3,7 +3,7 @@
 *                                              uC/DHCPc
 *                             Dynamic Host Configuration Protocol Client
 *
-*                    Copyright 2004-2020 Silicon Laboratories Inc. www.silabs.com
+*                    Copyright 2004-2021 Silicon Laboratories Inc. www.silabs.com
 *
 *                                 SPDX-License-Identifier: APACHE-2.0
 *
@@ -20,7 +20,7 @@
 *                                             DHCP CLIENT
 *
 * Filename : dhcp-c.c
-* Version  : V2.11.00
+* Version  : V2.11.01
 *********************************************************************************************************
 * Note(s)  : (1) Supports Dynamic Host Configuration Protocol as described in RFC #2131 with the
 *                following features/restrictions/constraints :
@@ -503,6 +503,10 @@ void  DHCPc_Start (NET_IF_NBR       if_nbr,
 
 
 #if (DHCPc_CFG_ARG_CHK_EXT_EN == DEF_ENABLED)
+    if (perr == DEF_NULL) {                                     /* Validate perr ptr.                                   */
+        CPU_SW_EXCEPTION();
+    }
+
     if (req_param_tbl_qty > 0) {
         if (preq_param_tbl == (DHCPc_OPT_CODE *)0) {
            *perr = DHCPc_ERR_NULL_PTR;
@@ -638,6 +642,12 @@ void  DHCPc_Stop (NET_IF_NBR   if_nbr,
     DHCPc_COMM_MSG   comm_msg;
 
 
+#if (DHCPc_CFG_ARG_CHK_EXT_EN == DEF_ENABLED)
+    if (perr == DEF_NULL) {                                     /* Validate perr ptr.                                   */
+        CPU_SW_EXCEPTION();
+    }
+#endif
+
     if (DHCPc_InitDone != DEF_YES) {                            /* If init NOT complete, exit (see Note #3).            */
        *perr = DHCPc_ERR_INIT_INCOMPLETE;
         return;
@@ -742,6 +752,12 @@ DHCPc_STATUS  DHCPc_ChkStatus (NET_IF_NBR   if_nbr,
     DHCPc_STATUS    status;
     CPU_SR_ALLOC();
 
+
+#if (DHCPc_CFG_ARG_CHK_EXT_EN == DEF_ENABLED)
+    if (perr_last == DEF_NULL) {                                /* Validate perr_last ptr.                              */
+        CPU_SW_EXCEPTION();
+    }
+#endif
 
     if (DHCPc_InitDone != DEF_YES) {                            /* If init NOT complete, exit (see Note #1).            */
        *perr_last = DHCPc_ERR_INIT_INCOMPLETE;
@@ -852,6 +868,10 @@ void  DHCPc_GetOptVal (NET_IF_NBR       if_nbr,
 
                                                                 /* -------------- VALIDATE BUF & BUF LEN -------------- */
 #if (DHCPc_CFG_ARG_CHK_EXT_EN == DEF_ENABLED)
+    if (perr == DEF_NULL) {                                     /* Validate perr ptr.                                   */
+        CPU_SW_EXCEPTION();
+    }
+
     if ((pval_buf     == (CPU_INT08U *)0) ||
         (pval_buf_len == (CPU_INT16U *)0)) {
        *perr = DHCPc_ERR_NULL_PTR;

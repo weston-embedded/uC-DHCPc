@@ -20,7 +20,7 @@
 *                                       DHCPc SINGLE INTERFACE
 *
 * Filename : dhcp-c_init.c
-* Version  : V2.11.00
+* Version  : V2.11.01
 *********************************************************************************************************
 * Note(s)  : (1) This example shows how to initialize uC/DHCPc, start DHCP negotiation on 1 interface,
 *                request parameters from the server during the negotiation. The function returns only

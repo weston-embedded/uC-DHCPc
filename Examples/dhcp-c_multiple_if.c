@@ -20,7 +20,7 @@
 *                                      DHCPc MULTIPLE INTERFACE
 *
 * Filename : dhcp-c_multiple_if.c
-* Version  : V2.11.00
+* Version  : V2.11.01
 *********************************************************************************************************
 * Note(s)  : (1) This example shows how to initialize uC/DHCPc, start DHCP negotiation on many interface
 *                and return only when all DHCP negotiation are completed.

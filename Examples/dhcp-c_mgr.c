@@ -20,7 +20,7 @@
 *                                            DHCPc MANAGER
 *
 * Filename : dhcp-c_mgr.c
-* Version  : V2.11.00
+* Version  : V2.11.01
 *********************************************************************************************************
 * Note(s)  : (1) This example shows how to initialize uC/DHCPc and manage DHCP following the interface link
 *                state change (restart DHCP negotiation when the link move UP to DOWN to UP). This example use
